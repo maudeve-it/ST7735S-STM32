@@ -32,7 +32,7 @@ This page contain commentary, notes, and errata.
 
 ## Project Folders
 
-Software forder is here:
+Software forder is here: https://github.com/maudeve-it/ST7735S-STM32/tree/main/SOURCE
 
 "How to" add it to a CubeIDE project:
 "How to" handle display backlight:
@@ -74,7 +74,7 @@ Questa repository contiene, oltre a questa presentazione, eventuali commenti, no
 
 ## Cartelle del progetto 
 
-- Software forder is here:
+- Il codice è qui: https://github.com/maudeve-it/ST7735S-STM32/tree/main/SOURCE
 - Guida per utilizzare il software in un progetto con CubeIDE:
 - Guida alla gestione della retroilluminazione:
 
