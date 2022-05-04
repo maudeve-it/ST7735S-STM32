@@ -11,10 +11,10 @@ _**Piu' sotto, al termine della lingua inglese trovi il testo in italiano </i>**
 "ST7735S-STM32" repository contains the source code for a set of functions for an STM32 microcontroller handling a 1.8 inch color LCD display based on the ST7735S SPI driver.
 
 Developed sowtware is based on HAL over STM32CubeIDE.
-Software has tested over an:
-STM32F411CE (Weact Studio board):
-STM32G432KB (Nucleo32 STM board):
-STM32L476RG (Nucleo64 STM board):
+Software has tested over
+STM32F411CE (Weact Studio board): https://github.com/WeActTC/MiniSTM32F4x1
+STM32G432KB (Nucleo32 STM board): https://www.st.com/en/evaluation-tools/nucleo-g431kb.html
+STM32L476RG (Nucleo64 STM board): https://www.st.com/en/evaluation-tools/nucleo-l476rg.html
 
 This page contain commentary, notes, and errata.
 
@@ -53,10 +53,10 @@ Software forder is here: https://github.com/maudeve-it/ST7735S-STM32/tree/main/S
 La repository "ST7735S-STM32" contiene i codici sorgente relative ad una serie di funzioni per STM32 per la gestione di un  display LCD a colori da 1,8 pollici controllato dal driver SPI ST7735S.
 
 Il sowtware sviluppato si basa su HAL attraverso STM32CubeIDE.
-Il software è stato testato su un:
-STM32F411CE (scheda Weact Studio):
-STM32G432KB (scheda Nucleo32 STM):
-STM32L476RG (scheda Nucleo64 STM):
+Il software è stato testato su
+STM32F411CE (scheda Weact Studio): https://github.com/WeActTC/MiniSTM32F4x1
+STM32G432KB (scheda Nucleo32 STM): https://www.st.com/en/evaluation-tools/nucleo-g431kb.html
+STM32L476RG (scheda Nucleo64 STM): https://www.st.com/en/evaluation-tools/nucleo-l476rg.html
 
 Questa repository contiene, oltre a questa presentazione, eventuali commenti, note e errata-corrige.
 
