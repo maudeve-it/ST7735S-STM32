@@ -8,7 +8,13 @@ _**Piu' sotto, al termine della lingua inglese trovi il testo in italiano </i>**
 
 # ST7735S-STM32
 
-"ST7735S-STM32" repository contains the source code for a set of functions handling a 1.8 inch color LCD display based on the ST7735S SPI driver.
+"ST7735S-STM32" repository contains the source code for a set of functions for an STM32 microcontroller handling a 1.8 inch color LCD display based on the ST7735S SPI driver.
+
+Developed sowtware is based on HAL and developed over STM32CubeIDE.
+Software has tested over an:
+STM32F411CE (Weact Studio board):
+STM32G432KB (Nucleo32 STM board):
+STM32L476RG (Nucleo64 STM board):
 
 This page contain commentary, notes, and errata.
 
@@ -24,10 +30,12 @@ This page contain commentary, notes, and errata.
 
 ---
 
-## Project Repositories
+## Project Folders
 
-## Test Repositories
+Software forder is here:
 
+"How to" add it to a CubeIDE project:
+"How to" handle display backlight:
 
 ---
 
@@ -42,13 +50,15 @@ This page contain commentary, notes, and errata.
 
 # ST7735S-STM32
 
-La repository "ST7735S-STM32" contiene i codici sorgente relative ad una serie di funzioni per la gestione del display LCD a colori da 1,8 pollici controllato dal driver SPI ST7735S.
+La repository "ST7735S-STM32" contiene i codici sorgente relative ad una serie di funzioni per STM32 per la gestione di un  display LCD a colori da 1,8 pollici controllato dal driver SPI ST7735S.
 
-Il
+Il sowtware sviluppato si basa su HAL attraverso STM32CubeIDE.
+Il software è stato testato su un:
+STM32F411CE (scheda Weact Studio):
+STM32G432KB (scheda Nucleo32 STM):
+STM32L476RG (scheda Nucleo64 STM):
 
-QUesta repository contiene, oltre a questa presentazione, eventuali commenti, note e errata-corrige.
-
-Per i dettagli tecnici del progetto occorre riferirsi alle specifiche repository del progetto elencate sotto.
+Questa repository contiene, oltre a questa presentazione, eventuali commenti, note e errata-corrige.
 
 ---
 > Il software e gli schemi di progetto come i layout PCB in questa serie di repository 
@@ -61,34 +71,17 @@ Per i dettagli tecnici del progetto occorre riferirsi alle specifiche repository
 
 ---
 
-## Repository del Progetto
 
-[Codice Sorgente (multilingua)] (https://github.com/maudeve-it/The-Gate-Opener_source-code)
+## Cartelle del progetto 
 
-[progetto PCB: Modulo Principale] (https://github.com/maudeve-it/The-Gate-Opener_PCB_base-module_KiCad)
-
-[progetto PCB: Modulo Display] (https://github.com/maudeve-it/The-Gate-Opener_PCB_display-module_KiCad)
-
-[Codice Sorgente sketch per test SIM800L] (https://github.com/maudeve-it/The-Gate-Opener_SIM800L-testing-code)
-
-[Manuale Utente] (https://github.com/maudeve-it/The-Gate-Opener_User-Manual)
-
-[Slide lingua IT] (https://github.com/maudeve-it/The-Gate-Opener_slides-IT)
-
-[Slide lingua EN] (https://github.com/maudeve-it/The-Gate-Opener_slides-EN)
-
-## Repository di test
-
-In queste repository sono archiviati gli sketch usati in alcuni video della playist YouTube.
-
-[Sketch per i test sull'uso di millis()] (https://github.com/maudeve-it/The-Gate-Opener_MILLIS-testing-code)
-
-[Sketch per i test sull'uso di SIM800L] (https://github.com/maudeve-it/The-Gate-Opener_SIM800L-testing-code)
+- Software forder is here:
+- Guida per utilizzare il software in un progetto con CubeIDE:
+- Guida alla gestione della retroilluminazione:
 
 ---
 
 ## NOTE
 
-20201102: Sto ancora aggiornando le repository. Considerale incomplete finche' non rimuovero' questa nota. 
+20220504: Sto ancora aggiornando le repository. Considerale incomplete finche' non rimuovero' questa nota. 
 
 
