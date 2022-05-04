@@ -10,7 +10,7 @@ _**Piu' sotto, al termine della lingua inglese trovi il testo in italiano </i>**
 
 "ST7735S-STM32" repository contains the source code for a set of functions for an STM32 microcontroller handling a 1.8 inch color LCD display based on the ST7735S SPI driver.
 
-Developed sowtware is based on HAL and developed over STM32CubeIDE.
+Developed sowtware is based on HAL over STM32CubeIDE.
 Software has tested over an:
 STM32F411CE (Weact Studio board):
 STM32G432KB (Nucleo32 STM board):
