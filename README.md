@@ -1,9 +1,7 @@
+_**Piu' sotto, al termine della lingua inglese trovi il testo in italiano. </i>**_
+_**<Below the English text you'll find the Italian version</i>**_
 
 <br>
-
-**Piu' sotto, al termine della lingua inglese trovi il testo in italiano </i>**
-
-
 <br>
 
 # ST7735S-STM32
