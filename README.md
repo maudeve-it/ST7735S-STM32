@@ -31,10 +31,10 @@ This page contain commentary, notes, and errata.
 
 ## Project Folders
 
-Software forder is here: https://github.com/maudeve-it/ST7735S-STM32/tree/main/SOURCE
 
-"How to" add it to a CubeIDE project:
-"How to" handle display backlight:
+- Software forder is here: https://github.com/maudeve-it/ST7735S-STM32/tree/main/SOURCE
+- "How to" add it to a CubeIDE project:
+- "How to" handle display backlight:
 
 ---
 
