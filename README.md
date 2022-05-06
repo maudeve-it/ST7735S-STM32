@@ -10,11 +10,8 @@ _**Below English text you'll find the Italian version</i>**_
 
 Developed sowtware is based on HAL over STM32CubeIDE.
 Software has tested over
-
 STM32F411CE (Weact Studio board): https://github.com/WeActTC/MiniSTM32F4x1
-
 STM32G432KB (Nucleo32 STM board): https://www.st.com/en/evaluation-tools/nucleo-g431kb.html
-
 STM32L476RG (Nucleo64 STM board): https://www.st.com/en/evaluation-tools/nucleo-l476rg.html
 
 
