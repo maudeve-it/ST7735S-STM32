@@ -31,6 +31,8 @@ STM32L476RG (Nucleo64 STM board): https://www.st.com/en/evaluation-tools/nucleo-
 > and no guarantee of completeness and correctness. 
 > By downloading and using these materials the user accepts all risks associated with the
 > construction and use of the circuits and devices described.
+> Fonts licence:   
+> Fonts are provided by STMicroelectronics. Licencing inside the fons ".c" files. 
 ---
 
 ## NOTES
