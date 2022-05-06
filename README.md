@@ -8,14 +8,19 @@ _**Below English text you'll find the Italian version</i>**_
 
 "ST7735S-STM32" repository contains the source code for a set of functions for an STM32 microcontroller handling a 1.8 inch color LCD display based on the ST7735S SPI driver.
 
-Developed sowtware is based on HAL over STM32CubeIDE.
+Developed software is based on HAL over STM32CubeIDE.
 Software has tested over<br>
 STM32F411CE (Weact Studio board): https://github.com/WeActTC/MiniSTM32F4x1<br>
 STM32G432KB (Nucleo32 STM board): https://www.st.com/en/evaluation-tools/nucleo-g431kb.html<br>
 STM32L476RG (Nucleo64 STM board): https://www.st.com/en/evaluation-tools/nucleo-l476rg.html
 
+---
 
-This page contain commentary, notes, and errata.
+## Project Folders
+
+- Software forder is here: https://github.com/maudeve-it/ST7735S-STM32/tree/main/SOURCE
+- "How to" add it to a CubeIDE project:
+- "How to" handle display backlight:
 
 ---
 > Please Note:
@@ -26,16 +31,6 @@ This page contain commentary, notes, and errata.
 > and no guarantee of completeness and correctness. 
 > By downloading and using these materials the user accepts all risks associated with the
 > construction and use of the circuits and devices described.
-
----
-
-## Project Folders
-
-
-- Software forder is here: https://github.com/maudeve-it/ST7735S-STM32/tree/main/SOURCE
-- "How to" add it to a CubeIDE project:
-- "How to" handle display backlight:
-
 ---
 
 ## NOTES
@@ -57,7 +52,13 @@ STM32F411CE (scheda Weact Studio): https://github.com/WeActTC/MiniSTM32F4x1<br>
 STM32G432KB (scheda Nucleo32 STM): https://www.st.com/en/evaluation-tools/nucleo-g431kb.html<br>
 STM32L476RG (scheda Nucleo64 STM): https://www.st.com/en/evaluation-tools/nucleo-l476rg.html
 
-Questa repository contiene, oltre a questa presentazione, eventuali commenti, note e errata-corrige.
+---
+
+## Cartelle del progetto 
+
+- Il codice è qui: https://github.com/maudeve-it/ST7735S-STM32/tree/main/SOURCE
+- Guida per utilizzare il software in un progetto con CubeIDE:
+- Guida alla gestione della retroilluminazione:
 
 ---
 > Il software e gli schemi di progetto come i layout PCB in questa serie di repository 
@@ -67,15 +68,7 @@ Questa repository contiene, oltre a questa presentazione, eventuali commenti, no
 > adeguatezza a soddisfare specifiche esigenze, ne di completezza o correttezza di alcuna parte.
 > Scaricando ed utilizzando questo materiale l'utilizzatore accetta il rischio associato alla
 > realizzazione ed all'utilizzo del circuito e dei componenti descritti in questi file.
-
 ---
-
-
-## Cartelle del progetto 
-
-- Il codice è qui: https://github.com/maudeve-it/ST7735S-STM32/tree/main/SOURCE
-- Guida per utilizzare il software in un progetto con CubeIDE:
-- Guida alla gestione della retroilluminazione:
 
 ---
 
