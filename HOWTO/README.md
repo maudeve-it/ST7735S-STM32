@@ -3,7 +3,8 @@ _**Below English text you'll find the Italian version</i>**_
 
 <br>
 <br>
-# HOW TO setup a project with this software
+
+## HOW TO setup a project with this software
 
 - create a new project on STM32CubeIDE
 - enable an SPI port. Configuration is:
