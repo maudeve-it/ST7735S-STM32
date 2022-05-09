@@ -6,8 +6,7 @@ _**Below English text you'll find the Italian version</i>**_
 
 ## HOW TO setup a project with this software
 
-- CubeMX setup
-
+#CubeMX setup
 - create a new project on STM32CubeIDE
 - enable an SPI port. Configuration is:
   - mode: Half-Duplex Master
