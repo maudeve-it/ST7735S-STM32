@@ -36,6 +36,10 @@ _**Below English text you'll find the Italian version</i>**_
   - DISPL_LED
   - DISPL_DC
   - DISPL_RST
+
+##### Downloading SW
+- download and install software as described [here](./SOURCE)
+
 ##### Parameters setup
 into "z_displ_ST7735.h" file you have to setup this configuration:
 - section 1 - Port Parameters: here you have to set two macro constant with the SPI port name connecting display
