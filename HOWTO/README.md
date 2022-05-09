@@ -6,6 +6,8 @@ _**Below English text you'll find the Italian version</i>**_
 
 ## HOW TO setup a project with this software
 
+- CubeMX setup
+
 - create a new project on STM32CubeIDE
 - enable an SPI port. Configuration is:
   - mode: Half-Duplex Master
@@ -23,9 +25,14 @@ _**Below English text you'll find the Italian version</i>**_
   - NSS=DISPL_CS
   - MOSI=DISPL_MOSI
   - SCK=DISPL_SCK
-
-- enable 2 more pins as GPIO_Output:
-  - 
+- enable 3 more pins as GPIO_Output:
+  - configuration is:
+    - Output push pull
+    - No pull-up/down 
+- assign these names yo GPIO pins:
+  - DISPL_LED
+  - DISPL_DC
+  - DISPL_RST
 
 
 
