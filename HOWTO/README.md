@@ -47,8 +47,7 @@ into "z_displ_ST7735.h" file you have to setup this configuration:
 - section 3 - Backlight Mode: see [BACKLIGHT page](../BACKLIGHT)  
 - section 4 - Buffer size: define the "Buffer Level" you like (between 10 and 16 included) see [youtube video](../BACKLIGHT) for information and analisys.  
 - section 5 - Display size: despite the ST7735 SPI driver can handle displays of any size and color modes, this library was tensed only on a 128x160 display running in RBG565.  
- 
---
+
 ---
 ## HOW TO: come configurare un progetto con questo software
 
