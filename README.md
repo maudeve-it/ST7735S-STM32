@@ -18,9 +18,9 @@ STM32L476RG (Nucleo64 STM board): https://www.st.com/en/evaluation-tools/nucleo-
 
 ## Project Folders
 
-- Software folder is [here](./SOURCE)
-- "How to" add it to a CubeIDE project: https://github.com/maudeve-it/ST7735S-STM32/tree/main/HOWTO
-- "How to" handle display backlight:
+- [Software folder](./SOURCE)
+- ["How to" add it to a CubeIDE project](./HOWTO)
+- ["How to" handle display backlight](./BACKLIGHT)
 
 ---
 > Please Note:
@@ -57,9 +57,9 @@ STM32L476RG (scheda Nucleo64 STM): https://www.st.com/en/evaluation-tools/nucleo
 
 ## Cartelle del progetto 
 
-- Il codice è qui: https://github.com/maudeve-it/ST7735S-STM32/tree/main/SOURCE
-- Guida per utilizzare il software in un progetto con CubeIDE: https://github.com/maudeve-it/ST7735S-STM32/tree/main/HOWTO
-- Guida alla gestione della retroilluminazione:
+- [Il Codice è qui](./SOURCE)
+- [Guida per integrare il software in un progetto con CubeIDE](./HOWTO)
+- [Guida alla gestione della retroilluminazione](./BACKLIGHT)
 
 ---
 > Il software e gli schemi di progetto come i layout PCB in questa serie di repository 
