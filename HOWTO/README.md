@@ -40,7 +40,7 @@ _**Below English text you'll find the Italian version</i>**_
 into "z_displ_ST7735.h" file you have to setup this configuration:
 - section 1 - Port Parameters: here you have to set two macro constant with the SPI port name connecting display
 - section 2 - SPI communication mode: uncomment the macro definition related to enabled communication mode (Polling moode, Interrupt mode or DMA mode). You must uncomment no less and no more than ONE definition here
-- section 3 - Backlight Timer: see [BACKLIGHT page] (../BACKLIGHT)  
+- section 3 - Backlight Timer: see [BACKLIGHT page](../BACKLIGHT)  
  
 
 
