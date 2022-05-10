@@ -15,8 +15,8 @@ That should be enough.
 "z_displ_ST7735_test" files (.c and .h) must be copied into the project only if you uant to use test/demo functions. You don't need to add it in the production project.
 
 That should be enough, now you can move to these sections:
-- ["How to" add it to a CubeIDE project](./HOWTO)
-- ["How to" handle display backlight](./BACKLIGHT)
+- ["How to" add it to a CubeIDE project](../HOWTO)
+- ["How to" handle display backlight](../BACKLIGHT)
 
 
 
@@ -34,8 +34,8 @@ That should be enough, now you can move to these sections:
 I file "z_displ_ST7735_test" (.c e .h) devono essere copiati nel progetto solo se vuoi usare le funzioni di demo e test. Non occorrono questi file nella versione definitiva del progetto.
 
 Dovrebbe bastrare, pra puoi andare alle sezioni:
-- [Guida per integrare il software in un progetto con CubeIDE](./HOWTO)
-- [Guida alla gestione della retroilluminazione](./BACKLIGHT)
+- [Guida per integrare il software in un progetto con CubeIDE](../HOWTO)
+- [Guida alla gestione della retroilluminazione](../BACKLIGHT)
 
 
 
