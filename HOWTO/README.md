@@ -46,7 +46,7 @@ into "z_displ_ST7735.h" file you have to setup this configuration:
 - section 2 - SPI communication mode: uncomment the macro definition related to enabled communication mode (Polling moode, Interrupt mode or DMA mode). You must uncomment no less and no more than ONE definition here
 - section 3 - Backlight Mode: see [BACKLIGHT page](../BACKLIGHT)  
 - section 4 - Buffer size: define the "Buffer Level" you like (assign a value between 10 and 16 included) see [youtube video](../BACKLIGHT) for information and analisys.  
-- section 5 - Display size: despite the ST7735 SPI driver can handle displays of any size and color modes, this library was tensed only on a 128x160 display running in RBG565.  
+- section 5 - Display size: despite the ST7735 SPI driver can handle displays of any size and color modes, this library was tested only on a 128x160 display running in RBG565.  
 
 ---
 ## HOW TO: come configurare un progetto con questo software
@@ -91,6 +91,6 @@ nel file "z_displ_ST7735.h" devi impostare questa configurazione:
 - section 2 - SPI communication mode: togli il commento alla definizione definition relativa al tipo di comunicazione attivato (Polling moode, Interrupt mode o DMA mode). Devi togliere il commento ad una riga (NON di più e NON di meno) 
 - section 3 - Backlight Mode: vedi la [pagina BACKLIGHT](../BACKLIGHT)  
 - section 4 - Dimensione del Buffer: imposta il "Buffer Level" che preferisci (assegna un valore tra 10 e 16 inclusi) vedi [il video youtube](../BACKLIGHT) per informazioni ed analisi.
-- section 5 - Dimensione Display: anche se il driver SPI ST7735 puo' gestire display di dimensioni diverse, questa libreria è stata testata solo su un display di 128x160 pixel in modalità RBG565.  
+- section 5 - Dimensione Display: anche se il driver SPI ST7735 può gestire display di dimensioni diverse, questa libreria è stata testata solo su un display di 128x160 pixel in modalità RBG565.  
  
 
