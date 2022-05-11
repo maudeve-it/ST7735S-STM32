@@ -23,7 +23,7 @@ connect the LED pin of the display to DISPL_LED
 That's all. Function "Displ_BackLight" provides these commands (function parameter):
 -	'0': display off
 -	'1': display on
--	'F': display on(as same as comand '1'
+-	'F': display on(as same as comand '1')
 -	'Q': no action
 "Displ_BackLight" function returns display status (0=off, 1 = on), command 'Q' is to query display status
 
