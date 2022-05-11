@@ -27,6 +27,7 @@ That's all. Function "Displ_BackLight" provides these commands (function paramet
 -	'F': display on(as same as comand '1')
 -	'Q': no action
 "Displ_BackLight" function returns display status (0=off, 1 = on), command 'Q' is to query display status
+<br>
 
 # Dimming mode Backlight
 ("#define DISPLAY_DIMMER_MODE" uncommented in "z_DISPL_st7735.h" file)
