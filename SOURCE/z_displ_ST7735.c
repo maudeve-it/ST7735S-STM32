@@ -1,6 +1,5 @@
 /*
  * z_gfx_functions.c
-  * rel. 5
  *
  *  Created on: Oct 9, 2021
  *      Author: mauro
@@ -179,9 +178,6 @@ void ST7735_Reset()
 }
 
 
-//255
-
-
 void ST7735_InitCmds(const uint8_t *addr)
 {
 	uint8_t numCommands, numArgs;
@@ -197,8 +193,12 @@ void ST7735_InitCmds(const uint8_t *addr)
 		ms = numArgs & DELAY;
 		numArgs &= ~DELAY;
 		if(numArgs) {
-			Displ_WriteData((uint8_t*)addr, numArgs);
-			addr += numArgs;
+// send 1 command each data transfer in init functions
+//			Displ_WriteData((uint8_t*)addr, numArgs);
+//			addr += numArgs;
+			for (uint8_t k=0;k<numArgs;k++){
+				Displ_WriteData((uint8_t*)addr++, 1);
+			}
 		}
 
 		if(ms) {
@@ -533,6 +533,10 @@ void Displ_WChar(uint16_t x, uint16_t y, char ch, sFONT font, uint8_t size, uint
 		default:
 			mask=0x80;
 	}
+	color1 = ((color & 0xFF)<<8 | (color >> 8));      		//swapping byte endian: STM32 is little endian, ST7735 is big endian
+	bgcolor1 = ((bgcolor & 0xFF)<<8 | (bgcolor >> 8));		//swapping byte endian: STM32 is little endian, ST7735 is big endian
+
+
 	for(i = 0; i < (bytes); i+=font.Size){
 		b=0;
 		switch (font.Size) {
@@ -545,9 +549,6 @@ void Displ_WChar(uint16_t x, uint16_t y, char ch, sFONT font, uint8_t size, uint
 			default:
 				b=pos[i];
 		}
-
-		color1 = ((color & 0xFF)<<8 | (color >> 8));      		//swapping byte endian: STM32 is little endian, ST7735 is big endian
-		bgcolor1 = ((bgcolor & 0xFF)<<8 | (bgcolor >> 8));		//swapping byte endian: STM32 is little endian, ST7735 is big endian
 
 		for(j = 0; j < font.Width; j++) {
 			if((b << j) & mask)  {
@@ -568,17 +569,6 @@ void Displ_WChar(uint16_t x, uint16_t y, char ch, sFONT font, uint8_t size, uint
 	dispBuffer = (dispBuffer==dispBuffer1 ? dispBuffer2 : dispBuffer1); // swapping buffer
 
 
-}
-
-
-
-uint16_t swapEndian(uint16_t i) {
-	uint16_t res=0;
-	__asm ("REV16 %[result], %[input_i]"
-    : [result] "=r" (res)
-    : [input_i] "r" (i)
-  );
-  return res;
 }
 
 
@@ -732,7 +722,8 @@ void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
 ***************************/
 void Displ_Transmit(GPIO_PinState DC_Status, uint8_t* data, uint16_t dataSize ){
 
-while (!dispSpiAvailable) {};  // this flag is set by transmit callback interrupt. It is reset to 0 here below starting a new transmission
+while (!dispSpiAvailable) {};  // waiting for a free SPI port. Flag is set to 1 by transmission-complete interrupt callback
+
 HAL_GPIO_WritePin(DISPL_DC_GPIO_Port, DISPL_DC_Pin, DC_Status);
 
 #ifndef DISPLAY_SPI_POLLING_MODE
@@ -1074,81 +1065,83 @@ void Displ_drawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color)
 
 
 
-/*****************
- * @brief	Turns display backlight on/off.
- * 			used both: in DIMMING mode and in TOGGLE mode
- * 			in TOGGLE mode is the only function to set backlight
- * @param	on (1=backlight on, 0=off)
- *****************/
-void Displ_ToggleLight(Displ_BckLit_e light){
-#ifdef DISPLAY_DIMMING_MODE
-	if (light)
-		Displ_BackLight('F');
-	else
-		Displ_BackLight('0');
-#else
-	HAL_GPIO_WritePin(DISPL_LED_GPIO_Port, DISPL_LED_Pin, light);
-#endif
-}
 
-
-#ifdef DISPLAY_DIMMING_MODE
 
 /**************************************
- * @brief		set backlight level. USED ONLY IN DIMMING MODE
+ * @brief		set backlight level
+ * 				PLEASE NOTE: if not in "DIMMING MODE" only 'F', '1', '0' and 'Q' available
  * @param	cmd	'S'		put display in stby (light level=BKLIT_STBY_LEVEL)
  * 				'W' 	wake-up from stdby restoring previous level
  *				'+'		add 1 step to the current light level
  *				'-'		reduce 1 step to the current light level
- *				'F'		set the display level to max
+ *				'F','1'	set the display level to max
  *				'0'		set the display level to 0 (off)
- *				'I'		'Initialize'  IT MUST BE
+ *				'I'		'Initialize'  IT MUST BE in dimming mode
  *              'Q'		do nothing, just return current level
  * @return		current backlight level
  *
  */
 uint32_t Displ_BackLight(uint8_t cmd) {
-	static uint16_t memCCR=0;  					//it stores CCR1 value while in stand-by
+
+#ifdef DISPLAY_DIMMING_MODE
+	static uint16_t memCCR1=0;  			//it stores CCR1 value while in stand-by
+#endif
 
 	switch (cmd) {
+#ifndef DISPLAY_DIMMING_MODE
+	case 'F':
+	case '1':
+		HAL_GPIO_WritePin(DISPL_LED_GPIO_Port, DISPL_LED_Pin, GPIO_PIN_SET);
+		break;
+	case '0':
+		HAL_GPIO_WritePin(DISPL_LED_GPIO_Port, DISPL_LED_Pin, GPIO_PIN_RESET);
+		break;
+#else
+	case 'F':
+	case '1':
+		BKLIT_TIMER->CCR1=BKLIT_TIMER->ARR;
+		break;
+	case '0':
+		BKLIT_TIMER->CCR1=0;
+		break;
 	case 'W':
-		BKLIT_TIMER->BKLIT_CCR=memCCR;					//restore previous level
+		BKLIT_TIMER->CCR1=memCCR1;					//restore previous level
 		break;
 	case 'S':
-		memCCR=BKLIT_TIMER->BKLIT_CCR;
-		if (BKLIT_TIMER->BKLIT_CCR>=BKLIT_STBY_LEVEL)	//set stby level only if current level is higher
-			BKLIT_TIMER->BKLIT_CCR=BKLIT_STBY_LEVEL;
+		memCCR1=BKLIT_TIMER->CCR1;
+		if (BKLIT_TIMER->CCR1>=(BKLIT_STBY_LEVEL))	//set stby level only if current level is higher
+			BKLIT_TIMER->CCR1=(BKLIT_STBY_LEVEL);
 		break;
 	case '+':
-		if (BKLIT_TIMER->ARR>BKLIT_TIMER->CCR1)  	// if CCR1 has not yet the highest value (=ARR)
-			BKLIT_TIMER->BKLIT_CCR++;
+		if (BKLIT_TIMER->ARR>BKLIT_TIMER->CCR1)		// if CCR1 has not yet the highest value (ARR)
+			++BKLIT_TIMER->CCR1;
+		else
+			BKLIT_TIMER->CCR1=BKLIT_TIMER->ARR;
 		break;
 	case '-':
-		if (BKLIT_TIMER->BKLIT_CCR>=0)					// if CCR1 has not yet the lowest value (0)
-			BKLIT_TIMER->BKLIT_CCR--;
+		if (BKLIT_TIMER->CCR1>0)					// if CCR1 has not yet the lowest value (0)
+			--BKLIT_TIMER->CCR1;
+		else
+			BKLIT_TIMER->CCR1=0;
 		break;
-	case 'F':
-		BKLIT_TIMER->BKLIT_CCR=BKLIT_TIMER->ARR;			// full
+	case 'I':
+		Displ_BackLight(BKLIT_INIT_LEVEL);
 		break;
-	case '0':										// off
-		BKLIT_TIMER->BKLIT_CCR=0;
-		break;
-	case 'I':										// initialize
-//		Displ_BackLight(BKLIT_INIT_LEVEL);
-		Displ_BackLight('0');
-		for (uint8_t k=0; k<BKLIT_INIT_LEVEL;k++){
-			HAL_Delay(80);
-			Displ_BackLight('+');
-		}
-		break;
-	case 'Q':										// query, just return current light level
+#endif
+	case 'Q':
 		break;
 	default:
 		break;
 	}
-	return (BKLIT_TIMER->BKLIT_CCR);
+#ifndef DISPLAY_DIMMING_MODE
+	return HAL_GPIO_ReadPin(DISPL_LED_GPIO_Port, DISPL_LED_Pin);
+#else
+	return (BKLIT_TIMER->CCR1);
+#endif
 }
 
 
-#endif
+
+
+
 

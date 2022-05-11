@@ -103,12 +103,6 @@
 #define ST7735_WIDTH  128
 #define ST7735_HEIGHT 160
 
-
-typedef enum {
-	Displ_BckLit_Off = 0,  // force it to 0 writing it directly into GPIO pin
-	Displ_BckLit_On
-} Displ_BckLit_e;
-
 typedef enum {
 	Displ_Orientat_0,
 	Displ_Orientat_90,
@@ -161,16 +155,6 @@ extern int16_t _height;      								///< (oriented) display height
     b = t;                                                                     \
   }
 
-//#define min(a, b) (((a) < (b)) ? (a) : (b))
-
-
-#define SWAP_ENDIAN(i)					\
-__asm ("REV16 %[data_i], %[data_i]"		\
-		: [data_i] "=r" ((i))			\
-	)
-
-
-
 
 void Displ_Init(Displ_Orientat_e orientation);
 void Displ_Orientation(Displ_Orientat_e orientation);
@@ -196,10 +180,6 @@ void Displ_drawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);
 void Displ_drawRoundRect(int16_t x, int16_t y, int16_t w, int16_t h, int16_t r, uint16_t color);
 void Displ_fillRoundRect(int16_t x, int16_t y, int16_t w, int16_t h, int16_t r, uint16_t color);
 
-void Displ_ToggleLight(Displ_BckLit_e light);
 uint32_t Displ_BackLight(uint8_t cmd);
-
-uint16_t swapEndian(uint16_t i);
-
 
 #endif /* INC_Z_GFX_FUNCTIONS_H_ */
