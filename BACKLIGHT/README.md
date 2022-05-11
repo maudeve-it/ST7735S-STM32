@@ -6,19 +6,19 @@ _**Below English text you'll find the Italian version</i>**_
 
 # Handling backlight
 
-Display backlight can be handle in two modes:
+this library can handle display backlight in two different modes:
 - as a switched on-off light
 - as a dimming backlight
 
 The backlight mode is defined by the macro define "DISPLAY_DIMMER_MODE" in "z_DISPL_st7735.h" file
 - If this definition is commented backight is switching on-off
-- removing comment you enable the dimming hendling
+- Uncomment the macro define enabling the dimming hendling 
 
 # Switching ON-OFF Backlight
-(leave commented the "#define DISPLAY_DIMMER_MODE" in "z_DISPL_st7735.h" file
+("#define DISPLAY_DIMMER_MODE" commented in "z_DISPL_st7735.h" file)
 Define a GPIO pin in output mode as described in [HOWTO](../HOWTO) page giving it the name DISPL_LED
 connect the LED pin of the display to DISPL_LED
 
-That's all: use the 
+That's all: function
 
 
