@@ -10,9 +10,9 @@ this library can handle display backlight in two different modes:
 - as a switched on-off light
 - as a dimming backlight
 
-The backlight mode is defined by the macro define "DISPLAY_DIMMER_MODE" in "z_DISPL_st7735.h" file
+The backlight mode is defined by the macro #define "DISPLAY_DIMMER_MODE" in "z_DISPL_st7735.h" file
 - If this definition is commented backight is switching on-off
-- Uncomment the macro define enabling the dimming hendling 
+- Uncomment the macro #define enabling the dimming hendling 
 
 # ON-OFF mode Backlight
 ("#define DISPLAY_DIMMER_MODE" commented in "z_DISPL_st7735.h" file)
