@@ -533,9 +533,9 @@ void Displ_WChar(uint16_t x, uint16_t y, char ch, sFONT font, uint8_t size, uint
 		default:
 			mask=0x80;
 	}
+	
 	color1 = ((color & 0xFF)<<8 | (color >> 8));      		//swapping byte endian: STM32 is little endian, ST7735 is big endian
 	bgcolor1 = ((bgcolor & 0xFF)<<8 | (bgcolor >> 8));		//swapping byte endian: STM32 is little endian, ST7735 is big endian
-
 
 	for(i = 0; i < (bytes); i+=font.Size){
 		b=0;
@@ -1079,9 +1079,8 @@ void Displ_drawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color)
  *				'I'		'Initialize'  IT MUST BE in dimming mode
  *              'Q'		do nothing, just return current level
  * @return		current backlight level
- *
- */
-uint32_t  (uint8_t cmd) {
+ **************************************/
+uint32_t  Displ_BackLight(uint8_t cmd) {
 
 #ifdef DISPLAY_DIMMING_MODE
 	static uint16_t memCCR1=0;  			//it stores CCR1 value while in stand-by
@@ -1099,30 +1098,30 @@ uint32_t  (uint8_t cmd) {
 #else
 	case 'F':
 	case '1':
-		BKLIT_TIMER->CCR1=BKLIT_TIMER->ARR;
+		BKLIT_TIMER->BKLIT_CCR=BKLIT_TIMER->ARR;
 		break;
 	case '0':
-		BKLIT_TIMER->CCR1=0;
+		BKLIT_TIMER->BKLIT_CCR=0;
 		break;
 	case 'W':
-		BKLIT_TIMER->CCR1=memCCR1;					//restore previous level
+		BKLIT_TIMER->BKLIT_CCR=memCCR1;					//restore previous level
 		break;
 	case 'S':
-		memCCR1=BKLIT_TIMER->CCR1;
-		if (BKLIT_TIMER->CCR1>=(BKLIT_STBY_LEVEL))	//set stby level only if current level is higher
-			BKLIT_TIMER->CCR1=(BKLIT_STBY_LEVEL);
+		memCCR1=BKLIT_TIMER->BKLIT_CCR;
+		if (BKLIT_TIMER->BKLIT_CCR>=(BKLIT_STBY_LEVEL))	//set stby level only if current level is higher
+			BKLIT_TIMER->BKLIT_CCR=(BKLIT_STBY_LEVEL);
 		break;
 	case '+':
-		if (BKLIT_TIMER->ARR>BKLIT_TIMER->CCR1)		// if CCR1 has not yet the highest value (ARR)
-			++BKLIT_TIMER->CCR1;
+		if (BKLIT_TIMER->ARR>BKLIT_TIMER->BKLIT_CCR)		// if CCR1 has not yet the highest value (ARR)
+			++BKLIT_TIMER->BKLIT_CCR;
 		else
-			BKLIT_TIMER->CCR1=BKLIT_TIMER->ARR;
+			BKLIT_TIMER->BKLIT_CCR=BKLIT_TIMER->ARR;
 		break;
 	case '-':
-		if (BKLIT_TIMER->CCR1>0)					// if CCR1 has not yet the lowest value (0)
-			--BKLIT_TIMER->CCR1;
+		if (BKLIT_TIMER->BKLIT_CCR>0)					// if CCR1 has not yet the lowest value (0)
+			--BKLIT_TIMER->BKLIT_CCR;
 		else
-			BKLIT_TIMER->CCR1=0;
+			BKLIT_TIMER->BKLIT_CCR=0;
 		break;
 	case 'I':
 		Displ_BackLight(BKLIT_INIT_LEVEL);
@@ -1136,7 +1135,7 @@ uint32_t  (uint8_t cmd) {
 #ifndef DISPLAY_DIMMING_MODE
 	return HAL_GPIO_ReadPin(DISPL_LED_GPIO_Port, DISPL_LED_Pin);
 #else
-	return (BKLIT_TIMER->CCR1);
+	return (BKLIT_TIMER->BKLIT_CCR);
 #endif
 }
 
