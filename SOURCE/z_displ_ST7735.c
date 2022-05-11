@@ -1081,7 +1081,7 @@ void Displ_drawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color)
  * @return		current backlight level
  *
  */
-uint32_t Displ_BackLight(uint8_t cmd) {
+uint32_t  (uint8_t cmd) {
 
 #ifdef DISPLAY_DIMMING_MODE
 	static uint16_t memCCR1=0;  			//it stores CCR1 value while in stand-by
