@@ -13,6 +13,7 @@ this library can handle display backlight in two different modes:
 The backlight mode is defined by the macro #define "DISPLAY_DIMMER_MODE" in "z_DISPL_st7735.h" file
 - If this definition is commented backight is switching on-off
 - Uncomment the macro #define enabling the dimming hendling 
+<br>
 
 # ON-OFF mode Backlight
 ("#define DISPLAY_DIMMER_MODE" commented in "z_DISPL_st7735.h" file)
@@ -30,6 +31,7 @@ That's all. Function "Displ_BackLight" provides these commands (function paramet
 # Dimming mode Backlight
 ("#define DISPLAY_DIMMER_MODE" uncommented in "z_DISPL_st7735.h" file)
 Function "Displ_BackLight" handle backlight in PWM.
+<br>
 
 ### setup on CubeMX
 a PWM pin:
@@ -76,6 +78,7 @@ questa libreria permette di gestire la retroilluminazione del display in due mod
 Il modo di illuminazione è definito dalla macro define "DISPLAY_DIMMER_MODE" nel file "z_DISPL_st7735.h".
 - Se la definizione è commentata la retroilluminazione è gestita in modalità acceso/spento
 - Togliendo il commento a inizio riga si abilita la gestione con illuminazione regolabile 
+<br>
 
 # Modalità acceso/spento
 ("con la riga #define DISPLAY_DIMMER_MODE" commentata nel file "z_DISPL_st7735.h")
@@ -91,6 +94,7 @@ Tutto qui. La funzione "Displ_BackLight" mette a disposizione i comandi (paramet
 -	'F': accende il display (come comando '1')
 -	'Q': nessuna azione
 La funzione "Displ_BackLight" restituisce sempre lo stato del display (0=spento, 1 = acceso), il comando 'Q' è per ottenere lo stato del display.
+<br>
 
 # Modalità "dimmer"
 ("rimosso il commento a #define DISPLAY_DIMMER_MODE" nel file "z_DISPL_st7735.h")
@@ -127,6 +131,7 @@ La funzione "Displ_BackLight" mette a disposizione i comandi (parametro passato 
 -	'-': diminuisce la luminosità di 1 livello
 -	'Q': nessuna azione
 La funzione "Displ_BackLight" restituisce sempre lo stato del display (livello di luminosità), il comando 'Q' è per interrogare sullo stato del display.
+<br>
  
 
 
