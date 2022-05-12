@@ -13,7 +13,8 @@ Software has tested over<br>
 STM32F411CE (Weact Studio board): https://github.com/WeActTC/MiniSTM32F4x1<br>
 STM32G432KB (Nucleo32 STM board): https://www.st.com/en/evaluation-tools/nucleo-g431kb.html<br>
 STM32L476RG (Nucleo64 STM board): https://www.st.com/en/evaluation-tools/nucleo-l476rg.html<br>
-Display 1.8 inch TFT-LCD 128x160: https://www.amazon.it/dp/B078J5TS2G?ref_=cm_sw_r_cp_ud_dp_8H03T4D49G82M2F588VN
+Display 1.8 inch TFT-LCD 128x160: https://www.aliexpress.com/item/1005003738191499.html<br>
+                                  https://www.amazon.it/dp/B078J5TS2G?ref_=cm_sw_r_cp_ud_dp_8H03T4D49G82M2F588VN
 
 ---
 
@@ -56,7 +57,8 @@ Il software è stato testato su<br>
 STM32F411CE (scheda Weact Studio): https://github.com/WeActTC/MiniSTM32F4x1<br>
 STM32G432KB (scheda Nucleo32 STM): https://www.st.com/en/evaluation-tools/nucleo-g431kb.html<br>
 STM32L476RG (scheda Nucleo64 STM): https://www.st.com/en/evaluation-tools/nucleo-l476rg.html<br>
-Display 1.8 inch TFT-LCD 128x160: https://www.amazon.it/dp/B078J5TS2G?ref_=cm_sw_r_cp_ud_dp_8H03T4D49G82M2F588VN
+Display 1.8 inch TFT-LCD 128x160: https://www.aliexpress.com/item/1005003738191499.html<br>
+                                  https://www.amazon.it/dp/B078J5TS2G?ref_=cm_sw_r_cp_ud_dp_8H03T4D49G82M2F588VN
 
 ---
 
