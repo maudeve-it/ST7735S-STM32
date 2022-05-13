@@ -28,6 +28,7 @@ That's all. Function "Displ_BackLight" provides these commands (function paramet
 |'1'|display on|
 |'F'|display on(as same as comand '1'|
 |'Q'|no action|
+
 "Displ_BackLight" function returns display status (0=off, 1 = on) so: command 'Q' is to query display status
 <br>
 
@@ -68,7 +69,9 @@ Function "Displ_BackLight" provides these commands (function parameter):
 |'+'|1 step level increase|
 |'-'|1 step level decrease|
 |'Q'|no action
+
 "Displ_BackLight" function returns display status (current level) so: command 'Q' is to query display status
+
 ---
 
 <br>
