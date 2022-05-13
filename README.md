@@ -12,7 +12,9 @@ Developed software is based on HAL over STM32CubeIDE.
 Software has tested over<br>
 STM32F411CE (Weact Studio board): https://github.com/WeActTC/MiniSTM32F4x1<br>
 STM32G432KB (Nucleo32 STM board): https://www.st.com/en/evaluation-tools/nucleo-g431kb.html<br>
-STM32L476RG (Nucleo64 STM board): https://www.st.com/en/evaluation-tools/nucleo-l476rg.html
+STM32L476RG (Nucleo64 STM board): https://www.st.com/en/evaluation-tools/nucleo-l476rg.html<br>
+Display 1.8 inch TFT-LCD 128x160: https://www.aliexpress.com/item/1005003738191499.html<br>
+                                  https://www.amazon.it/dp/B078J5TS2G?ref_=cm_sw_r_cp_ud_dp_8H03T4D49G82M2F588VN
 
 ---
 
@@ -21,6 +23,9 @@ STM32L476RG (Nucleo64 STM board): https://www.st.com/en/evaluation-tools/nucleo-
 - [Software folder](./SOURCE)
 - ["How to" add it to a CubeIDE project](./HOWTO)
 - ["How to" handle display backlight](./BACKLIGHT)
+
+Youtube video showing project characteristics and performance: https://youtu.be/oWx1-WmTwag<br>
+
 
 ---
 > Please Note:
@@ -45,13 +50,15 @@ STM32L476RG (Nucleo64 STM board): https://www.st.com/en/evaluation-tools/nucleo-
 
 # ST7735S-STM32
 
-La repository "ST7735S-STM32" contiene i codici sorgente relative ad una serie di funzioni per STM32 per la gestione di un  display LCD a colori da 1,8 pollici controllato dal driver SPI ST7735S.
+La repository "ST7735S-STM32" contiene i codici sorgente relativi ad un set di funzioni per STM32 per la gestione di un display LCD a colori da 1,8 pollici controllato dal driver SPI ST7735S.
 
 Il sowtware sviluppato si basa su HAL attraverso STM32CubeIDE.
 Il software è stato testato su<br>
 STM32F411CE (scheda Weact Studio): https://github.com/WeActTC/MiniSTM32F4x1<br>
 STM32G432KB (scheda Nucleo32 STM): https://www.st.com/en/evaluation-tools/nucleo-g431kb.html<br>
-STM32L476RG (scheda Nucleo64 STM): https://www.st.com/en/evaluation-tools/nucleo-l476rg.html
+STM32L476RG (scheda Nucleo64 STM): https://www.st.com/en/evaluation-tools/nucleo-l476rg.html<br>
+Display 1.8 inch TFT-LCD 128x160: https://www.aliexpress.com/item/1005003738191499.html<br>
+                                  https://www.amazon.it/dp/B078J5TS2G?ref_=cm_sw_r_cp_ud_dp_8H03T4D49G82M2F588VN
 
 ---
 
@@ -60,6 +67,8 @@ STM32L476RG (scheda Nucleo64 STM): https://www.st.com/en/evaluation-tools/nucleo
 - [Il Codice è qui](./SOURCE)
 - [Guida per integrare il software in un progetto con CubeIDE](./HOWTO)
 - [Guida alla gestione della retroilluminazione](./BACKLIGHT)
+
+Video Youtube con le caracteristiche e le prestazioni del progetto: https://youtu.be/oWx1-WmTwag<br>
 
 ---
 > Il software e gli schemi di progetto come i layout PCB in questa serie di repository 

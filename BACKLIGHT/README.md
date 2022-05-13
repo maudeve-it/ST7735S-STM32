@@ -10,9 +10,10 @@ this library can handle display backlight in two different modes:
 - as a switched on-off light
 - as a dimming backlight
 
-The backlight mode is defined by the macro define "DISPLAY_DIMMER_MODE" in "z_DISPL_st7735.h" file
+The backlight mode is defined by the macro #define "DISPLAY_DIMMER_MODE" in "z_DISPL_st7735.h" file
 - If this definition is commented backight is switching on-off
-- Uncomment the macro define enabling the dimming hendling 
+- Uncomment the macro #define enabling the dimming hendling 
+<br>
 
 # ON-OFF mode Backlight
 ("#define DISPLAY_DIMMER_MODE" commented in "z_DISPL_st7735.h" file)
@@ -28,19 +29,21 @@ That's all. Function "Displ_BackLight" provides these commands (function paramet
 |'F'|display on(as same as comand '1'|
 |'Q'|no action|
 "Displ_BackLight" function returns display status (0=off, 1 = on) so: command 'Q' is to query display status
+<br>
 
 # Dimming mode Backlight
 ("#define DISPLAY_DIMMER_MODE" uncommented in "z_DISPL_st7735.h" file)
 Function "Displ_BackLight" handle backlight in PWM.
+<br>
 
 ### setup on CubeMX
-a PWM pin setup needs:
+a PWM pin:
 -	enable a PWM channel on a "general purpose" timer (e.g. CH1 on TIM3)
 -	setup channel as "PWM mode 1" and "Counter mode UP"
-ARR register ("Auto Reload Register", "Counter period" on CubeMX) defines display light levels number. E.g.: set it to 10 to get 10 light levels available (from 1 10 10, and level 0="off")
+ARR register ("Auto Reload Register" or "Counter period" on CubeMX) defines display light levels number. E.g.: set it to 10 to get 10 light levels available (from 1 10, and level 0="off")
 PSC register(prescaler) value must be not too high: so that ((uC clock / PSC)/ ARR) > 100 Hz, avoiding flickering
 
-### setup on z_DISPL_st7735.h
+### setup z_DISPL_st7735.h
 align to CubeMX macro parameters:
 #define BKLIT_TIMER 				set used timer (es. TIM3)
 #define bklit_t 					set used timer (es. htim3)
@@ -80,6 +83,7 @@ questa libreria permette di gestire la retroilluminazione del display in due mod
 Il modo di illuminazione è definito dalla macro define "DISPLAY_DIMMER_MODE" nel file "z_DISPL_st7735.h".
 - Se la definizione è commentata la retroilluminazione è gestita in modalità acceso/spento
 - Togliendo il commento a inizio riga si abilita la gestione con illuminazione regolabile 
+<br>
 
 # Modalità acceso/spento
 ("con la riga #define DISPLAY_DIMMER_MODE" commentata nel file "z_DISPL_st7735.h")
@@ -97,19 +101,20 @@ Tutto qui. La funzione "Displ_BackLight" mette a disposizione i comandi (paramet
 |'F'|accende il display (come comando '1')|
 |'Q'|nessuna azione|
 La funzione "Displ_BackLight" restituisce sempre lo stato del display (0=spento, 1 = acceso), il comando 'Q' è usato quindi per ottenere lo stato del display.
+<br>
 
 # Modalità "dimmer"
 ("rimosso il commento a #define DISPLAY_DIMMER_MODE" nel file "z_DISPL_st7735.h")
 la funzione "Displ_BackLight" gestisce la retroilluminazione controllata in PWM.
 
 ### configura su CubeMX
-Per gestire un pin PWM occorre:
+un pin PWM:
 -	attivare un canale PWM di timer "general purpose" (es. CH1 su TIM3)
 -	il canale deve essere configurato in "PWM mode 1" e "Counter mode UP"
-il registro ARR ("Auto Reload Register", "Counter period" su CubeMX) definisce il numero di livelli di luminosità del display. Es: impostare a 10 per avere 10 livelli di luminosità disponibili (da 1 a 10, piu' il livello 0="display spento")
+il registro ARR ("Auto Reload Register", o "Counter period" su CubeMX) definisce il numero di livelli di luminosità del display. Es: impostare a 10 per avere 10 livelli di luminosità disponibili (da 1 a 10, piu' il livello 0="display spento")
 Il valore del registro PSC (prescaler) deve essere impostato in modo non troppo elevato in modo che: ((clock uC / PSC)/ ARR) > 100 Hz per evitare problemi di flickering
 
-### configura su z_DISPL_st7735.h
+### configura z_DISPL_st7735.h
 
 allineare i parametri:
 #define BKLIT_TIMER 				indicare il timer usato (es. TIM3)
@@ -135,6 +140,7 @@ La funzione "Displ_BackLight" mette a disposizione i comandi (parametro passato 
 |'-'|diminuisce la luminosità di 1 livello|
 |'Q'|nessuna azione|
 La funzione "Displ_BackLight" restituisce sempre lo stato del display (livello di luminosità), il comando 'Q' è usato quindi per interrogare sullo stato del display.
+<br>
  
 
 
