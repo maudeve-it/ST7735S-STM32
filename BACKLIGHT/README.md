@@ -26,7 +26,7 @@ That's all. Function "Displ_BackLight" provides these commands (function paramet
 |---|---|
 |'0'|display off|
 |'1'|display on|
-|'F'|display on(as same as comand '1'|
+|'F'|display on(as same as comand '1')|
 |'Q'|no action|
 
 "Displ_BackLight" function returns display status (0=off, 1 = on) so: command 'Q' is to query display status
@@ -103,6 +103,7 @@ Tutto qui. La funzione "Displ_BackLight" mette a disposizione i comandi (paramet
 |'1'|accende  il display|
 |'F'|accende il display (come comando '1')|
 |'Q'|nessuna azione|
+
 La funzione "Displ_BackLight" restituisce sempre lo stato del display (0=spento, 1 = acceso), il comando 'Q' è usato quindi per ottenere lo stato del display.
 <br>
 
@@ -142,6 +143,7 @@ La funzione "Displ_BackLight" mette a disposizione i comandi (parametro passato 
 |'+'|aumenta la luminosità di 1 livello|
 |'-'|diminuisce la luminosità di 1 livello|
 |'Q'|nessuna azione|
+
 La funzione "Displ_BackLight" restituisce sempre lo stato del display (livello di luminosità), il comando 'Q' è usato quindi per interrogare sullo stato del display.
 <br>
  
