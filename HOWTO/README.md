@@ -32,11 +32,11 @@ _**Below English text you'll find the Italian version</i>**_
 |NVIC settings|enable SPI global interrupt|
 - assign these names to SPI pins:
 
-|SPI pin|pinname to assign|
-|---|---|
-|NSS|DISPL_CS|
-|MOSI|DISPL_MOSI|
-|SCK|DISPL_SCK|
+		|SPI pin|pinname to assign|
+		|---|---|
+		|NSS|DISPL_CS|
+		|MOSI|DISPL_MOSI|
+		|SCK|DISPL_SCK|
 - enable 3 more pins as GPIO_Output:
   - configuration is:
     - Output push pull

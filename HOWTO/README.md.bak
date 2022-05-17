@@ -13,7 +13,8 @@ _**Below English text you'll find the Italian version</i>**_
   - mode: Half-Duplex Master
   - NSS: Hardware NSS Output Signal
   - (as per ST7735 datasheet) Baud Rate: <= 15 MBit/s  
-  - all other parameter as default:<br>
+  - all other parameter as default:
+  
 |Parameter setting field|value|
 |---|---|
 |Frame format|Motorola|
@@ -23,12 +24,14 @@ _**Below English text you'll find the Italian version</i>**_
 |CPHA|Edge|
 |CRC calculation|disabled|
 |NSS type|Output Hw|
-  - if communication in DMA mode:<br>
+  - if communication in DMA mode:
+  
 |SPI config label|value|
 |---|---|
 |DMA settings|enable only TX DMA|
 |NVIC settings|enable SPI global interrupt|
-- assign these names to SPI pins:<br>
+- assign these names to SPI pins:
+
 |SPI pin|pinname to assign|
 |---|---|
 |NSS|DISPL_CS|
@@ -38,7 +41,8 @@ _**Below English text you'll find the Italian version</i>**_
   - configuration is:
     - Output push pull
     - No pull-up/down 
-	- assign these names to GPIO pins:<br>
+	- assign these names to GPIO pins:
+	
 |pinname to assign|
 |---|
 |DISPL_LED|
