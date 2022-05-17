@@ -10,9 +10,12 @@ _**Below English text you'll find the Italian version</i>**_
 ##### CubeMX setup
 - create a new project on STM32CubeIDE
 - enable an SPI port. Configuration is:
-  - mode: Half-Duplex Master
-  - NSS: Hardware NSS Output Signal
-  - (as per ST7735 datasheet) Baud Rate: <= 15 MBit/s  
+
+|Parameter setting field|value|
+|---|---|
+|mode|Half-Duplex Master|
+|NSS|Hardware NSS Output Signal|
+|(as per ST7735 datasheet) Baud Rate|<= 15 MBit/s|
   - all other parameter as default:
   
 |Parameter setting field|value|
@@ -32,16 +35,18 @@ _**Below English text you'll find the Italian version</i>**_
 |NVIC settings|enable SPI global interrupt|
 - assign these names to SPI pins:
 
-		|SPI pin|pinname to assign|
-		|---|---|
-		|NSS|DISPL_CS|
-		|MOSI|DISPL_MOSI|
-		|SCK|DISPL_SCK|
+|SPI pin|pinname to assign|
+|---|---|
+|NSS|DISPL_CS|
+|MOSI|DISPL_MOSI|
+|SCK|DISPL_SCK|
+
 - enable 3 more pins as GPIO_Output:
-  - configuration is:
-    - Output push pull
-    - No pull-up/down 
-	- assign these names to GPIO pins:
+
+|pin configuration|
+|---|
+|Output push pull|
+|No pull-up/down|
 	
 |pinname to assign|
 |---|
@@ -67,32 +72,47 @@ into "z_displ_ST7735.h" file you have to setup this configuration:
 ##### COnfigurazione CubeMX
 - crea un nuovo progetto su STM32CubeIDE
 - attiva una porta SPI con questa configurazione:
-  - mode: Half-Duplex Master
-  - NSS: Hardware NSS Output Signal
-  - (come da datasheet del driver ST7735) Baud Rate: <= 15 MBit/s  
-  - tutti gli altri valori come da default:
-    - Motorola frame format
-    - 8 bit
-    - MSB first
-    - CPOL low
-    - CPHA 1 Edge
-    - no CRC
-    - NSS Output Hw
+
+|Parameter setting field|value|
+|---|---|
+|mode|Half-Duplex Master|
+|NSS|Hardware NSS Output Signal|
+|(come da datasheet del driver ST7735) Baud Rate|<= 15 MBit/s|
+  
+|Parameter setting field|value|
+|---|---|
+|Frame format|Motorola|
+|Data size|8 bit|
+|First bit|MSB first|	
+|CPOL|low|
+|CPHA|Edge|
+|CRC calculation|disabled|
+|NSS type|Output Hw|
   - se attivato DMA:
-    - attivare solo TX DMA
-    - attivare comunque anche SPI global interrupt
+  
+|SPI config label|value|
+|---|---|
+|DMA settings|enable only TX DMA|
+|NVIC settings|enable SPI global interrupt|
 - assegnare questi nomi ai pin SPI:
-  - NSS=DISPL_CS
-  - MOSI=DISPL_MOSI
-  - SCK=DISPL_SCK
+
+|pin SPI|pinname da assegnare|
+|---|---|
+|NSS|DISPL_CS|
+|MOSI|DISPL_MOSI|
+|SCK|DISPL_SCK|
 - attivare altri 3 pin come GPIO_Output:
-  - la configurazione è:
-    - Output push pull
-    - No pull-up/down 
-- assegnare questi nomi ai pin GPIO:
-  - DISPL_LED
-  - DISPL_DC
-  - DISPL_RST
+
+|configurazione pin|
+|---|
+|Output push pull|
+|No pull-up/down|
+	
+|pinname da assegnare|
+|---|
+|DISPL_LED|
+|DISPL_DC|
+|DISPL_RST|
 
 ##### Scaricare il SW
 - scaricare ed installare il software come descritto [qui](../SOURCE)
