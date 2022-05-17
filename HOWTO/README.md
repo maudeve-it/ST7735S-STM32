@@ -13,7 +13,7 @@ _**Below English text you'll find the Italian version</i>**_
   - mode: Half-Duplex Master
   - NSS: Hardware NSS Output Signal
   - (as per ST7735 datasheet) Baud Rate: <= 15 MBit/s  
-  - all other parameter as default:
+  - all other parameter as default:<br>
 |Frame format|Motorola|
 |Data size|8 bit|
 |First bit|MSB first|	
