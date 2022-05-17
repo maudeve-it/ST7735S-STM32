@@ -14,10 +14,12 @@ _**Below English text you'll find the Italian version</i>**_
   - NSS: Hardware NSS Output Signal
   - (as per ST7735 datasheet) Baud Rate: <= 15 MBit/s  
   - all other parameter as default:<br>
+|1|2|
 |---|---|
 |Frame format|Motorola|
 |Data size|8 bit|
 |First bit|MSB first|	
+
 |---|---|
 |CPOL|low|
 |CPHA|Edge|
@@ -25,6 +27,7 @@ _**Below English text you'll find the Italian version</i>**_
 |CRC calculation|disabled|
 |NSS type|Output Hw|
 |---|---|
+
   - if communication in DMA mode:
 |DMA settings|enable only TX DMA|
 |NVIC settings|enable SPI global interrupt|
