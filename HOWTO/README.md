@@ -60,7 +60,7 @@ _**Below English text you'll find the Italian version</i>**_
 ##### Parameters setup
 into "z_displ_ST7735.h" file you have to setup this configuration:
 - section 1 - Port Parameters: here you have to set two macro constant with the SPI port name connecting display
-- section 2 - SPI communication mode: uncomment the macro definition related to enabled communication mode (Polling moode, Interrupt mode or DMA mode). You must uncomment no less and no more than ONE definition here
+- section 2 - SPI communication mode: uncomment the macro definition related to enabled communication mode (Polling mode, Interrupt mode or DMA mode). You must uncomment no less and no more than ONE definition here
 - section 3 - Backlight Mode: see [BACKLIGHT page](../BACKLIGHT)  
 - section 4 - Buffer size: define the "Buffer Level" you like (assign a value between 10 and 16 included) see [youtube video](../BACKLIGHT) for information and analisys.  
 - section 5 - Display size: despite the ST7735 SPI driver can handle displays of any size and color modes, this library was tested only on a 128x160 display running in RBG565.  
