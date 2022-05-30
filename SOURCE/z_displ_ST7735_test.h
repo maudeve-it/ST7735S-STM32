@@ -1,5 +1,5 @@
 /*
- * z_displ_test.h
+ * z_displ_ST7735_test
  *  rel. 5
  *
  *  Created on: Mar 25, 2022

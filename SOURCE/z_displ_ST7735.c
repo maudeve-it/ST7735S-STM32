@@ -1,5 +1,5 @@
 /*
- * z_gfx_functions.c
+ * z_displ_ST7735.c
  *
  *  Created on: Oct 9, 2021
  *      Author: mauro

@@ -1,5 +1,5 @@
 /*
- * z_gfx_functions.h
+ * z_displ_ST7735.h
  *  rel. 5
  *
  *  Created on: Oct 9, 2021
