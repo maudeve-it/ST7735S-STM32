@@ -63,7 +63,7 @@ Function "Displ_BackLight" provides these commands (function parameter):
 |'1'|display to highest level (ARR)|
 |'F'|display to highest level (as same as comand '1')|
 |'Q'|no action|
-|'I'|display to startup level |
+|'I'|initial display setup|
 |'S'|display to standby level|
 |'W'|display level before last standby (wakeup from standby)|
 |'+'|1 step level increase|
@@ -72,6 +72,7 @@ Function "Displ_BackLight" provides these commands (function parameter):
 
 "Displ_BackLight" function returns display status (current level) so: command 'Q' is to query display status
 
+PLEASE NOTE: if dimming, run Displ_BackLight('I') on startup! It will also start the timer clock.
 ---
 
 <br>
@@ -137,7 +138,7 @@ La funzione "Displ_BackLight" mette a disposizione i comandi (parametro passato 
 |'0'|spegne il display (livello 0)|
 |'1'|display al massimo (livello ARR)|
 |'F'|display al massimo (come comando '1')|
-|'I'|display al valore di accensione|
+|'I'|setup iniziale del display|
 |'S'|display al valore di standby|
 |'W'|display al valore precedente all'ultimo standby (risveglio da standby)|
 |'+'|aumenta la luminosità di 1 livello|
@@ -145,6 +146,8 @@ La funzione "Displ_BackLight" mette a disposizione i comandi (parametro passato 
 |'Q'|nessuna azione|
 
 La funzione "Displ_BackLight" restituisce sempre lo stato del display (livello di luminosità), il comando 'Q' è usato quindi per interrogare sullo stato del display.
+
+NOTA BENE: se in dimming mode, si deve eseguire Displ_Backlight('I') in fase di startup. Verrà avviato anche il clock del timer
 <br>
  
 

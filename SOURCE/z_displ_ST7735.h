@@ -64,9 +64,9 @@
  * Set all other defines below */
 
 
-#define DISPLAY_DIMMING_MODE						// uncomment this define to enable dimming function otherwise there is an on/off switching function
+//#define DISPLAY_DIMMING_MODE						// uncomment this define to enable dimming function otherwise there is an on/off switching function
 #define BKLIT_TIMER 				TIM3			//timer used (PWMming DISPL_LED pin)
-#define bklit_t 					htim3			//timer used
+#define BKLIT_T 					htim3			//timer used
 #define BKLIT_CHANNEL				TIM_CHANNEL_2	//channel used
 #define BKLIT_CCR					CCR2			//preload register
 #define BKLIT_STBY_LEVEL 			1				//Display backlight level when in stand-by (levels are CNT values)

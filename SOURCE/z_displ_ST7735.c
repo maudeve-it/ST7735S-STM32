@@ -10,6 +10,10 @@
 
 extern SPI_HandleTypeDef DISPLAY_SPI_PORT;
 
+#ifdef	DISPLAY_DIMMING_MODE
+extern TIM_HandleTypeDef BKLIT_T;
+#endif
+
 static volatile uint32_t dispSpiAvailable=1;  		// 0 if SPI is busy or 1 if it is free (transm cplt)
 
 int16_t _width;       								///< (oriented) display width
@@ -1073,7 +1077,7 @@ void Displ_drawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color)
  *				'-'		reduce 1 step to the current light level
  *				'F','1'	set the display level to max
  *				'0'		set the display level to 0 (off)
- *				'I'		'Initialize'  IT MUST BE in dimming mode
+ *				'I'		'Initialize'. If dimming mode, IT MUST BE run on startup
  *              'Q'		do nothing, just return current level
  * @return		current backlight level
  **************************************/
@@ -1121,6 +1125,7 @@ uint32_t  Displ_BackLight(uint8_t cmd) {
 			BKLIT_TIMER->BKLIT_CCR=0;
 		break;
 	case 'I':
+	  	HAL_TIM_PWM_Start(&BKLIT_T, BKLIT_CHANNEL);
 		Displ_BackLight(BKLIT_INIT_LEVEL);
 		break;
 #endif
