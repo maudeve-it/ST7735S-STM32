@@ -18,9 +18,9 @@ The backlight mode is defined by the macro #define "DISPLAY_DIMMER_MODE" in "z_D
 # ON-OFF mode Backlight
 ("#define DISPLAY_DIMMER_MODE" commented in "z_DISPL_st7735.h" file)
 ### setup on CubeMX
-Define a GPIO pin in output mode as described in [HOWTO](../HOWTO) page giving it the name DISPL_LED
-connect the LED pin of the display to DISPL_LED
-
+Define a GPIO pin in output mode as described in [HOWTO](../HOWTO) page giving it the name DISPL_LED<br>
+connect the LED pin of the display to DISPL_LED<br>
+<br>
 That's all. Function "Displ_BackLight" provides these commands (function parameter):
 |parameter|description|
 |---|---|
@@ -33,7 +33,7 @@ That's all. Function "Displ_BackLight" provides these commands (function paramet
 <br>
 
 # Dimming mode Backlight
-("#define DISPLAY_DIMMER_MODE" uncommented in "z_DISPL_st7735.h" file)
+("#define DISPLAY_DIMMER_MODE" uncommented in "z_DISPL_st7735.h" file)<br>
 Function "Displ_BackLight" handle backlight in PWM.
 <br>
 
@@ -93,10 +93,10 @@ Il modo di illuminazione è definito dalla macro define "DISPLAY_DIMMER_MODE" ne
 ("con la riga #define DISPLAY_DIMMER_MODE" commentata nel file "z_DISPL_st7735.h")
 
 ### configura su CubeMX
-Definire un pin GPIO in output mode, come spiegato in [HOWTO](../HOWTO) e assegnare il nome "DISPL_LED"
-Assegnare "low" a "GPIO output level"
+Definire un pin GPIO in output mode, come spiegato in [HOWTO](../HOWTO) e assegnare il nome "DISPL_LED"<br>
+Assegnare "low" a "GPIO output level"<br>
  
-Connettere il pin LED del display a DISPL_LED
+Connettere il pin LED del display a DISPL_LED<br>
 Tutto qui. La funzione "Displ_BackLight" mette a disposizione i comandi (parametro passato alla funzione):
 |parametro|descrizione|
 |---|---|
@@ -109,29 +109,29 @@ La funzione "Displ_BackLight" restituisce sempre lo stato del display (0=spento,
 <br>
 
 # Modalità "dimmer"
-("se viene rimosso il commento a #define DISPLAY_DIMMER_MODE" nel file "z_DISPL_st7735.h")
-la funzione "Displ_BackLight" gestisce la retroilluminazione controllata in PWM.
-
+("se viene rimosso il commento a #define DISPLAY_DIMMER_MODE" nel file "z_DISPL_st7735.h")<br>
+la funzione "Displ_BackLight" gestisce la retroilluminazione controllata in PWM.<br>
+<br>
 ### configura su CubeMX
 un pin PWM:<br>
 -	attivare un canale PWM di timer "general purpose" (es. CH1 su TIM3)<br>
 -	il canale deve essere configurato in "PWM mode 1" e "Counter mode UP"<br>
-il registro ARR ("Auto Reload Register", o "Counter period" su CubeMX) definisce il numero di livelli di luminosità del display. Es: impostare a 10 per avere 10 livelli di luminosità disponibili (da 1 a 10, piu' il livello 0="display spento")
-Il valore del registro PSC (prescaler) deve essere impostato in modo non troppo elevato in modo che: ((clock uC / PSC)/ ARR) > 100 Hz per evitare problemi di flickering
+il registro ARR ("Auto Reload Register", o "Counter period" su CubeMX) definisce il numero di livelli di luminosità del display. Es: impostare a 10 per avere 10 livelli di luminosità disponibili (da 1 a 10, piu' il livello 0="display spento")<br>
+Il valore del registro PSC (prescaler) deve essere impostato in modo non troppo elevato in modo che: ((clock uC / PSC)/ ARR) > 100 Hz per evitare problemi di flickering<br>
 
 ### configura z_DISPL_st7735.h
 
-allineare i parametri:
-#define BKLIT_TIMER 				indicare il timer usato (es. TIM3)
-#define bklit_t 					indicare il timer usato (es. htim3)
-#define BKLIT_CHANNEL				indicare il canale usato (es. TIM_CHANNEL_2)
-
-definire i parametri:
-#define BKLIT_STBY_LEVEL 			indicare il livello di standby (tra 0 ed ARR)
-#define BKLIT_INIT_LEVEL 			indicare il livello di assegnare alla accensione (tra 0 ed ARR)
-
-#define BKLIT_CCR					CCR2			//preload register
-
+allineare i parametri:<br>
+#define BKLIT_TIMER 				indicare il timer usato (es. TIM3)<br>
+#define bklit_t 					indicare il timer usato (es. htim3)<br>
+#define BKLIT_CHANNEL				indicare il canale usato (es. TIM_CHANNEL_2)<br>
+<br>
+definire i parametri:<br>
+#define BKLIT_STBY_LEVEL 			indicare il livello di standby (tra 0 ed ARR)<br>
+#define BKLIT_INIT_LEVEL 			indicare il livello di assegnare alla accensione (tra 0 ed ARR)<br>
+<br>
+#define BKLIT_CCR					      definire il preload register coinvolto da PWM<br>
+<br>
 La funzione "Displ_BackLight" mette a disposizione i comandi (parametro passato alla funzione):
 |parametro|descrizione|
 |---|---|
@@ -145,7 +145,7 @@ La funzione "Displ_BackLight" mette a disposizione i comandi (parametro passato 
 |'-'|diminuisce la luminosità di 1 livello|
 |'Q'|nessuna azione|
 
-La funzione "Displ_BackLight" restituisce sempre lo stato del display (livello di luminosità), il comando 'Q' è usato quindi per interrogare sullo stato del display.
+La funzione "Displ_BackLight" restituisce sempre lo stato del display (livello di luminosità), il comando 'Q' è usato quindi per interrogare sullo stato del display.<br>
 
 NOTA BENE: se in dimming mode, si deve eseguire Displ_Backlight('I') in fase di startup. Verrà avviato anche il clock del timer
 <br>
