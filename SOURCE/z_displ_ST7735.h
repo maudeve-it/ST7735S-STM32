@@ -92,7 +92,7 @@
  * (warning: I used only 160X128,
  * other sizes/types not tested)
  *
- * set here pixel format of the
+ * set here pixel size of the
  * display driven by ST7735
  * never tested (and probably uncomplete)
  * on sizes else than 160x128

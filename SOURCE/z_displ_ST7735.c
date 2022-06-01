@@ -1009,11 +1009,8 @@ void Displ_drawTriangle(int16_t x0, int16_t y0, int16_t x1, int16_t y1, int16_t 
 
 
 
-void Displ_fillCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color)
-{
-//    drawFastVLine(x0, y0-r, 2*r+1, color);
+void Displ_fillCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color){
     Displ_Line(x0, y0-r, x0, y0+r, color);
-
     fillCircleHelper(x0, y0, r, 3, 0, color);
 }
 
