@@ -38,23 +38,23 @@ Function "Displ_BackLight" handle backlight in PWM.
 <br>
 
 ### setup on CubeMX
-a PWM pin:
--	enable a PWM channel on a "general purpose" timer (e.g. CH1 on TIM3)
--	setup channel as "PWM mode 1" and "Counter mode UP"
-ARR register ("Auto Reload Register" or "Counter period" on CubeMX) defines display light levels number. E.g.: set it to 10 to get 10 light levels available (from 1 10, and level 0="off")
-PSC register(prescaler) value must be not too high: so that ((uC clock / PSC)/ ARR) > 100 Hz, avoiding flickering
+a PWM pin:<br>
+-	enable a PWM channel on a "general purpose" timer (e.g. CH1 on TIM3)<br>
+-	setup channel as "PWM mode 1" and "Counter mode UP"<br>
+ARR register ("Auto Reload Register" or "Counter period" on CubeMX) defines display light levels number. E.g.: set it to 10 to get 10 light levels available (from 1 10, and level 0="off")<br>
+PSC register(prescaler) value must be not too high: so that ((uC clock / PSC)/ ARR) > 100 Hz, avoiding flickering<br>
 
 ### setup z_DISPL_st7735.h
-align to CubeMX macro parameters:
-#define BKLIT_TIMER 				set used timer (es. TIM3)
-#define bklit_t 					set used timer (es. htim3)
-#define BKLIT_CHANNEL				set used channel (es. TIM_CHANNEL_2)
-
-definire i parametri:
-#define BKLIT_STBY_LEVEL 			set standby level (between 0 and ARR)
-#define BKLIT_INIT_LEVEL 			set startup level (between 0 and ARR)
-
-#define BKLIT_CCR					CCR2			//preload register
+align to CubeMX macro parameters:<br>
+#define BKLIT_TIMER 				set used timer (es. TIM3)<br>
+#define bklit_t 					set used timer (es. htim3)<br>
+#define BKLIT_CHANNEL				set used channel (es. TIM_CHANNEL_2)<br>
+<br>
+setup parameters:<br>
+#define BKLIT_STBY_LEVEL 			set standby level (between 0 and ARR)<br>
+#define BKLIT_INIT_LEVEL 			set startup level (between 0 and ARR)<br>
+<br>
+#define BKLIT_CCR					      indicate the preload register involved by PWM<br>
 
 Function "Displ_BackLight" provides these commands (function parameter):
 |parameter|description|
@@ -80,13 +80,13 @@ PLEASE NOTE: if dimming, run Displ_BackLight('I') on startup! It will also start
 
 # Gestire la retroilluminazione
 
-questa libreria permette di gestire la retroilluminazione del display in due modi:
-- con un interruttore acceso/spento
-- con regolazione di luminosità variabile
-
-Il modo di illuminazione è definito dalla macro define "DISPLAY_DIMMER_MODE" nel file "z_DISPL_st7735.h".
-- Se la definizione è commentata la retroilluminazione è gestita in modalità acceso/spento
-- Togliendo il commento a inizio riga si abilita la gestione con illuminazione regolabile 
+questa libreria permette di gestire la retroilluminazione del display in due modi:<br>
+- con un interruttore acceso/spento<br>
+- con regolazione di luminosità variabile<br>
+<br>
+Il modo di illuminazione è definito dalla macro define "DISPLAY_DIMMER_MODE" nel file "z_DISPL_st7735.h".<br>
+- Se la definizione è commentata la retroilluminazione è gestita in modalità acceso/spento<br>
+- Togliendo il commento a inizio riga si abilita la gestione con illuminazione regolabile <br>
 <br>
 
 # Modalità acceso/spento
@@ -109,13 +109,13 @@ La funzione "Displ_BackLight" restituisce sempre lo stato del display (0=spento,
 <br>
 
 # Modalità "dimmer"
-("rimosso il commento a #define DISPLAY_DIMMER_MODE" nel file "z_DISPL_st7735.h")
+("se viene rimosso il commento a #define DISPLAY_DIMMER_MODE" nel file "z_DISPL_st7735.h")
 la funzione "Displ_BackLight" gestisce la retroilluminazione controllata in PWM.
 
 ### configura su CubeMX
-un pin PWM:
--	attivare un canale PWM di timer "general purpose" (es. CH1 su TIM3)
--	il canale deve essere configurato in "PWM mode 1" e "Counter mode UP"
+un pin PWM:<br>
+-	attivare un canale PWM di timer "general purpose" (es. CH1 su TIM3)<br>
+-	il canale deve essere configurato in "PWM mode 1" e "Counter mode UP"<br>
 il registro ARR ("Auto Reload Register", o "Counter period" su CubeMX) definisce il numero di livelli di luminosità del display. Es: impostare a 10 per avere 10 livelli di luminosità disponibili (da 1 a 10, piu' il livello 0="display spento")
 Il valore del registro PSC (prescaler) deve essere impostato in modo non troppo elevato in modo che: ((clock uC / PSC)/ ARR) > 100 Hz per evitare problemi di flickering
 
