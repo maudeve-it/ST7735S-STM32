@@ -41,7 +41,7 @@ Youtube video showing project characteristics and performance: https://youtu.be/
 
 ## NOTES
 
-20220504: I am still working on these repositories. Consider them uncomplete until this note is deleted.
+...
 
 ---
 
@@ -83,7 +83,7 @@ Video Youtube con le caracteristiche e le prestazioni del progetto: https://yout
 
 ## NOTE
 
-20220504: Sto ancora aggiornando le repository. Considerale incomplete finche' non rimuovero' questa nota. 
+...
 
 ---
 
