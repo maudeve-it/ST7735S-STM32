@@ -29,7 +29,17 @@
 #include <string.h>
 
 
-/*****************     STEP 0      *****************
+/******************    STEP 0    ******************
+ *** if mapping flash on the uC addresses space ***
+ ********** uncomment the below #define ***********
+ ******** end assign it the correct value *********
+ ***** If external flash handled by TOUCHGFX,******
+ ************* let #define commented **************
+ **************************************************/
+//#define EXT_FLASH_BASEADDRESS 0X90000000 // mapped flash base address
+
+
+/*****************     STEP 1      *****************
  ************ Enable TouchGFX interface ************
  * uncommenting the below #define to enable
  * functions interfacing TouchGFX
@@ -39,7 +49,7 @@
 
 /*||||||||||| USER/PROJECT PARAMETERS |||||||||||*/
 
-/******************    STEP 1    ******************
+/******************    STEP 2    ******************
  **************** PORT PARAMETERS *****************
  ** properly set the below the 2 defines to address
  ********  the SPI port defined on CubeMX *********/
@@ -48,7 +58,7 @@
 #define DISPLAY_SPI 		SPI1
 
 
-/*****************     STEP 2      ****************
+/*****************     STEP 3      ****************
  ************* SPI COMMUNICATION MODE *************
  ** enable SPI mode wanted uncommenting ONE row ***
  ******* Same as configuration set on CubeMX ******/
@@ -58,7 +68,7 @@
 #define DISPLAY_SPI_DMA_MODE
 
 
-/*****************     STEP 3      *****************
+/*****************     STEP 4      *****************
  ***************** Backlight timer *****************
  * if you want dimming backlight UNCOMMENT the
  * DISPLAY_DIMMING_MODE below define and properly
@@ -88,7 +98,7 @@
 #endif
 
 
-/*****************     STEP 4      *****************
+/*****************     STEP 5      *****************
  ************* frame buffer DEFINITION *************
  * BUFLEVEL defines buffer size:
  * buffer size is 2^BUFLEVEL, 2 means 4 bytes buffer,
@@ -105,7 +115,7 @@
 #endif
 
 
-/********     STEP 5      ********
+/********     STEP6      ********
  ****** ST7735 display size ******
  * (warning: I used only 160X128,
  * other sizes/types not tested)
@@ -210,6 +220,7 @@ void Displ_fillCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);
 void Displ_drawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color);
 void Displ_drawRoundRect(int16_t x, int16_t y, int16_t w, int16_t h, int16_t r, uint16_t color);
 void Displ_fillRoundRect(int16_t x, int16_t y, int16_t w, int16_t h, int16_t r, uint16_t color);
+void Displ_DrawImage(uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint8_t *data);
 
 uint32_t Displ_BackLight(uint8_t cmd);
 
